@@ -1,0 +1,178 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1.5in]{geometry}
+%\usepackage[left=2cm, right=2cm, bottom=2cm, top=2cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{mathtools}
+\usepackage{pdflscape}
+\usepackage{fancyvrb}
+
+%\renewcommand{\baselinestretch}{1.5} 
+
+\usepackage{fancyhdr}
+\rhead{Subhankar Ghosh}
+\lhead{CSCI-GA 2271\\ Assignment 2}
+\pagestyle{fancy}
+
+\title{ComputerVisionAssignment02}
+\author{Subhankar Ghosh}
+
+\begin{document}
+
+\begin{itemize}
+
+\item[Problem 1]
+
+\item[Problem 2]
+
+	\begin{itemize}
+	
+	\item[(a)]
+	
+	\item[(b)]
+	bla bla
+	
+	\end{itemize}
+
+\newpage
+\newgeometry{left=2cm, right=2cm, bottom=1in, top=2cm}
+\thispagestyle{empty}
+\begin{landscape}
+
+\item[Problem 3]
+
+	\begin{itemize}
+	
+	\item[(a)]
+	
+	Fig. 1: Visualization of Network Weights After Last Epoch\\
+	
+	\includegraphics[width=0.2\linewidth]{3a}
+	
+	\begin{Verbatim}[fontsize=\small]	
+Torch 7.0  Copyright (C) 2001-2011 Idiap, NEC Labs, NYU
+debugger.lua: Loaded for LuaJIT 2.1.0-beta1
+debugger.lua: Readline support enabled.
+Started training!	
+train | epoch = 1  | lr = 0.10 | loss: 25386.0086 | error: 647.00 - valid | validloss: 17814.3238 | validerror: 518.00 | s/iter: 0.2496	
+train | epoch = 2  | lr = 0.10 | loss: 3748.6882  | error: 221.00 - valid | validloss: 3118.2646  | validerror: 260.00 | s/iter: 0.2197	
+train | epoch = 3  | lr = 0.10 | loss: 1445.4774  | error: 169.00 - valid | validloss: 2089.6351  | validerror: 190.00 | s/iter: 0.2231	
+train | epoch = 4  | lr = 0.10 | loss: 1494.7103  | error: 153.00 - valid | validloss: 1995.3745  | validerror: 227.00 | s/iter: 0.2216	
+train | epoch = 5  | lr = 0.10 | loss: 629.9546   | error: 94.000 - valid | validloss: 1810.1251  | validerror: 191.00 | s/iter: 0.2209	
+train | epoch = 6  | lr = 0.10 | loss: 435.9186   | error: 78.000 - valid | validloss: 1968.7269  | validerror: 219.00 | s/iter: 0.2212	
+train | epoch = 7  | lr = 0.10 | loss: 367.7190   | error: 81.000 - valid | validloss: 1763.3146  | validerror: 210.00 | s/iter: 0.2230	
+train | epoch = 8  | lr = 0.10 | loss: 337.0684   | error: 81.000 - valid | validloss: 2418.8308  | validerror: 244.00 | s/iter: 0.2198	
+train | epoch = 9  | lr = 0.10 | loss: 230.6017   | error: 57.000 - valid | validloss: 1531.5071  | validerror: 181.00 | s/iter: 0.2254	
+train | epoch = 10 | lr = 0.10 | loss: 205.9181   | error: 67.000 - valid | validloss: 1683.8639  | validerror: 192.00 | s/iter: 0.2185	
+| test | error: 194.0000
+
+
+	\end{Verbatim}
+	
+	\item[(b)]
+	
+	\begin{Verbatim}[fontsize=\small]
+	[ Some repeated 0's omitted to fit page ]
+		
+Torch 7.0  Copyright (C) 2001-2011 Idiap, NEC Labs, NYU
+debugger.lua: Loaded for LuaJIT 2.1.0-beta1
+debugger.lua: Readline support enabled.
+Started training!	
+train | epoch = 1  | lr = 0.10 | loss: 51.6955    | error: 42.00 - valid | validloss: 20528.6838 | validerror: 7349.00 | s/iter: 1.0672	
+train | epoch = 2  | lr = 0.10 | loss: 17036.5289 | error: 30.00 - valid | validloss: 31677.9093 | validerror: 7778.00 | s/iter: 1.0163	
+train | epoch = 3  | lr = 0.10 | loss: 28253.4735 | error: 31.00 - valid | validloss: 30825.3480 | validerror: 7606.00 | s/iter: 1.1350	
+train | epoch = 4  | lr = 0.10 | loss: 25271.3729 | error: 28.00 - valid | validloss: 25903.1999 | validerror: 6450.00 | s/iter: 1.0704	
+train | epoch = 5  | lr = 0.10 | loss: 17990.4247 | error: 20.00 - valid | validloss: 16927.2973 | validerror: 6751.00 | s/iter: 1.0645	
+train | epoch = 6  | lr = 0.10 | loss: 10830.9136 | error: 23.00 - valid | validloss: 16616.2025 | validerror: 5651.00 | s/iter: 1.0418	
+train | epoch = 7  | lr = 0.10 | loss: 11949.9100 | error: 13.00 - valid | validloss: 12137.8374 | validerror: 5181.00 | s/iter: 1.0266	
+train | epoch = 8  | lr = 0.10 | loss: 4517.3605  | error: 10.00 - valid | validloss: 6079.8848  | validerror: 4046.00 | s/iter: 1.0288	
+train | epoch = 9  | lr = 0.10 | loss: 487.6562   | error: 3.000 - valid | validloss: 4726.9952  | validerror: 3661.00 | s/iter: 1.0574	
+train | epoch = 10 | lr = 0.10 | loss: 0.0000     | error: 0.000 - valid | validloss: 4726.9952  | validerror: 3661.00 | s/iter: 1.1250	
+| test | error: 3764.0000
+
+
+	\end{Verbatim}	
+	\end{itemize}
+\end{landscape}
+
+\newpage
+\newgeometry{left=2cm, right=2cm, bottom=1in, top=2cm}	
+\thispagestyle{empty}
+\begin{landscape}
+
+\item[Problem 4]
+
+	\begin{itemize}
+	
+	\item[(a)]
+
+    \begin{Verbatim}[fontsize=\small]
+    [ Some repeated 0's omitted to fit page ]
+    
+Torch 7.0  Copyright (C) 2001-2011 Idiap, NEC Labs, NYU
+debugger.lua: Loaded for LuaJIT 2.1.0-beta1
+debugger.lua: Readline support enabled.
+Started training!	
+train | epoch = 1  | lr = 0.1000 | loss: 2.3297 | error: 42.0000 - valid | validloss: 2.4078 | validerror: 36.0000 | s/iter: 0.0543	
+train | epoch = 2  | lr = 0.1000 | loss: 1.5053 | error: 26.0000 - valid | validloss: 3.5842 | validerror: 33.0000 | s/iter: 0.0388	
+train | epoch = 3  | lr = 0.1000 | loss: 3.2527 | error: 21.0000 - valid | validloss: 3.8671 | validerror: 38.0000 | s/iter: 0.0418	
+train | epoch = 4  | lr = 0.1000 | loss: 2.2795 | error: 23.0000 - valid | validloss: 3.8315 | validerror: 31.0000 | s/iter: 0.0317	
+train | epoch = 5  | lr = 0.1000 | loss: 4.1009 | error: 18.0000 - valid | validloss: 4.4384 | validerror: 37.0000 | s/iter: 0.0486	
+train | epoch = 6  | lr = 0.1000 | loss: 2.5622 | error: 29.0000 - valid | validloss: 5.1230 | validerror: 34.0000 | s/iter: 0.0308	
+train | epoch = 7  | lr = 0.1000 | loss: 3.6772 | error: 14.0000 - valid | validloss: 4.1413 | validerror: 42.0000 | s/iter: 0.0492	
+train | epoch = 8  | lr = 0.1000 | loss: 2.4936 | error: 27.0000 - valid | validloss: 5.0336 | validerror: 36.0000 | s/iter: 0.0279	
+train | epoch = 9  | lr = 0.1000 | loss: 5.3246 | error: 22.0000 - valid | validloss: 5.2312 | validerror: 34.0000 | s/iter: 0.0430	
+train | epoch = 10 | lr = 0.1000 | loss: 5.3499 | error: 24.0000 - valid | validloss: 3.5096 | validerror: 36.0000 | s/iter: 0.0331	
+| test | error: 42.0000	
+    
+    
+    
+    \end{Verbatim}
+	
+	\item[(b)]
+	
+	\begin{Verbatim}[fontsize=\small]
+Torch 7.0  Copyright (C) 2001-2011 Idiap, NEC Labs, NYU
+debugger.lua: Loaded for LuaJIT 2.1.0-beta1
+debugger.lua: Readline support enabled.
+Started training!	
+train | epoch = 1  | lr = 10.0000 | loss: 2.4640    | error: 45.0000 - valid | validloss: 69.3512   | validerror: 44.0000 | s/iter: 0.0666	
+train | epoch = 2  | lr = 10.0000 | loss: 61.6798   | error: 42.0000 - valid | validloss: 1121.7498 | validerror: 47.0000 | s/iter: 0.0339	
+train | epoch = 3  | lr = 10.0000 | loss: 1366.5812 | error: 43.0000 - valid | validloss: 1887.2327 | validerror: 43.0000 | s/iter: 0.0461	
+train | epoch = 4  | lr = 10.0000 | loss: 2761.0186 | error: 43.0000 - valid | validloss: 2616.2613 | validerror: 45.0000 | s/iter: 0.0271	
+train | epoch = 5  | lr = 10.0000 | loss: 3405.6249 | error: 45.0000 - valid | validloss: 2843.3397 | validerror: 41.0000 | s/iter: 0.0388	
+train | epoch = 6  | lr = 10.0000 | loss: 3581.8713 | error: 31.0000 - valid | validloss: 3118.1675 | validerror: 46.0000 | s/iter: 0.0337	
+train | epoch = 7  | lr = 10.0000 | loss: 3587.0831 | error: 46.0000 - valid | validloss: 3507.7988 | validerror: 44.0000 | s/iter: 0.0406	
+train | epoch = 8  | lr = 10.0000 | loss: 3890.1784 | error: 46.0000 - valid | validloss: 3513.6440 | validerror: 44.0000 | s/iter: 0.0290	
+train | epoch = 9  | lr = 10.0000 | loss: 3427.3567 | error: 44.0000 - valid | validloss: 4050.8327 | validerror: 42.0000 | s/iter: 0.0472	
+train | epoch = 10 | lr = 10.0000 | loss: 3786.4545 | error: 46.0000 - valid | validloss: 4442.2520 | validerror: 45.0000 | s/iter: 0.0270	
+| test | error: 45.0000	
+    \end{Verbatim}
+	
+	\end{itemize}
+	
+\end{landscape}
+	
+\restoregeometry	
+\newpage
+\item[Problem 5]
+
+	\begin{itemize}
+	
+	\item[(a)]
+	
+	\item[(b)]
+	
+	\item[(c)]
+	
+	\end{itemize}
+
+\end{itemize}
+
+\end{document}
