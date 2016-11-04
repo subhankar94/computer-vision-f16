@@ -26,7 +26,7 @@ local tnt   = require 'torchnet'
 local dbg   = require 'debugger'
 -- to set breakpoint put just put: dbg() at desired line
 
-local base_data_path = '/Users/subhankarghosh/Code/computer-vision-f16/hw2/assign2/data/' 
+local base_data_path = '/Users/subhankarghosh/Code/computer-vision-f16/hw2/assign2/data/'
 
 -- Dataprep for MNIST
 
@@ -65,7 +65,7 @@ local function getMnistIterator(datasets, train, small)
       elseif small == true and train == true then
         list = torch.range(1, 50):totable()
       else
-        list = torch.range(1, 50):totable()
+        list = torch.range(1, 1000):totable()
       end
       --]]
         table.insert(listdatasets,
@@ -143,7 +143,7 @@ if config.mnist == true then nin = 784 end
 if config.cifar == true then nin = 3072 end
 
 -- ex 3
--- [[
+--[[
 local network = nn.Linear(nin, nout)
 --]]
 
@@ -158,7 +158,7 @@ network:add(nn.Linear(hidden, nout))
 
 
 -- ex 5
---[[
+-- [[
 local x = torch.Tensor(3, 32, 32)
 local network = nn.Sequential()
 -- stage 1
@@ -180,6 +180,29 @@ network:add(nn.Tanh())
 network:add(nn.Linear(64, nout))
 --]]
 
+--[[
+function count_parameters(network)
+    local n_parameters = 0
+    for i = 1, network:size() do
+        local params = network:get(i):parameters()
+        if params then
+            local weights = params[1]
+            local biases  = params[2]
+            print(i)
+            print(#weights)
+            print(#biases)
+            n_parameters  = n_parameters + weights:nElement() + biases:nElement()
+
+        end
+    end
+    print('Number of parameters in the model:')
+    print(n_parameters)
+end
+
+count_parameters(network)
+os.exit()
+--]]
+
 local criterion = nn.CrossEntropyCriterion()
 
 ------------------------------------------------------------------------
@@ -191,11 +214,11 @@ local testiterator
 if config.mnist == true then
     local datasets
     datasets = {torch.load(base_data_path .. 'train_small_28x28.t7', 'ascii')}
-    trainiterator = getMnistIterator(datasets, true, true) -- get...(..., train, small)
+    trainiterator = getMnistIterator(datasets, true, false) -- get...(..., train, small)
     datasets = {torch.load(base_data_path .. 'valid_28x28.t7', 'ascii')}
-    validiterator = getMnistIterator(datasets, false, true)
+    validiterator = getMnistIterator(datasets, false, false)
     datasets = {torch.load(base_data_path .. 'test_28x28.t7', 'ascii')}
-    testiterator  = getMnistIterator(datasets, false, true)
+    testiterator  = getMnistIterator(datasets, false, false)
 end
 if config.cifar == true then
     local datasets
@@ -234,10 +257,17 @@ for epoch = 1, epochs do
         errors = errors + (pred:size(1) - pred:eq(d.target):sum())
     end
     -- plot network weights after 10th epoch
-    if epoch == 10 then image.display(torch.reshape(network.weight, 10, 28, 28)) end
+    -- if epoch == 10 then image.display(torch.reshape(network.weight, 10, 28, 28)) end
+    if epoch > 0 then
+      w = (network:get(1)).weight
+      w = image.toDisplayTensor(w)
+      w = image.scale(w, 15*w:size(3), 15*w:size(2), 'simple')
+      image.savePNG('layer_1_weights'..epoch..'.png', w)
+    end
+
     loss = loss / count
 
-    
+
     local validloss = 0
     local validerrors = 0
     count = 0
@@ -266,6 +296,7 @@ for d in testiterator() do
     testerrors = testerrors + (pred:size(1) - pred:eq(d.target):sum())
 end
 
+network:clearState()
+torch.save('./cnn_model', network)
+
 print(string.format('| test | error: %2.4f', testerrors))
-
-
