@@ -1,0 +1,221 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1.5in]{geometry}
+%\usepackage[left=2cm, right=2cm, bottom=2cm, top=2cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{mathtools}
+\usepackage{pdflscape}
+\usepackage{fancyvrb}
+\usepackage{mathtools}
+
+%\renewcommand{\baselinestretch}{1.5} 
+
+\usepackage{fancyhdr}
+\rhead{Subhankar Ghosh}
+\lhead{CSCI-GA 2271\\ Assignment 2}
+\pagestyle{fancy}
+
+\title{ComputerVisionAssignment02}
+\author{Subhankar Ghosh}
+
+\begin{document}
+
+\begin{itemize}
+\item[Problem 2]
+
+	\begin{itemize}
+	
+	\item[(a)]
+	
+	\includegraphics{mnist_100}
+	
+	\item[(b)]
+	
+	\includegraphics{cifar_100}
+	
+	\end{itemize}
+
+\newpage
+\newgeometry{left=2cm, right=2cm, bottom=1in, top=2cm}
+\thispagestyle{empty}
+\begin{landscape}
+
+\item[Problem 3]
+
+	\begin{itemize}
+	
+	\item[(a)]
+	
+	Fig. 1: Visualization of Network Weights After Last Epoch\\
+	
+	\includegraphics[width=0.2\linewidth]{3a}
+	
+	\begin{Verbatim}[fontsize=\small]
+	[ Some repeated 0's omitted to fit page ]
+			
+Started training!	
+train | epoch = 1  | lr = 0.10 | loss: 25386.0086 | error: 647.00 - valid | validloss: 17814.3238 | validerror: 518.00 | s/iter: 0.2496	
+train | epoch = 2  | lr = 0.10 | loss: 3748.6882  | error: 221.00 - valid | validloss: 3118.2646  | validerror: 260.00 | s/iter: 0.2197	
+train | epoch = 3  | lr = 0.10 | loss: 1445.4774  | error: 169.00 - valid | validloss: 2089.6351  | validerror: 190.00 | s/iter: 0.2231	
+train | epoch = 4  | lr = 0.10 | loss: 1494.7103  | error: 153.00 - valid | validloss: 1995.3745  | validerror: 227.00 | s/iter: 0.2216	
+train | epoch = 5  | lr = 0.10 | loss: 629.9546   | error: 94.000 - valid | validloss: 1810.1251  | validerror: 191.00 | s/iter: 0.2209	
+train | epoch = 6  | lr = 0.10 | loss: 435.9186   | error: 78.000 - valid | validloss: 1968.7269  | validerror: 219.00 | s/iter: 0.2212	
+train | epoch = 7  | lr = 0.10 | loss: 367.7190   | error: 81.000 - valid | validloss: 1763.3146  | validerror: 210.00 | s/iter: 0.2230	
+train | epoch = 8  | lr = 0.10 | loss: 337.0684   | error: 81.000 - valid | validloss: 2418.8308  | validerror: 244.00 | s/iter: 0.2198	
+train | epoch = 9  | lr = 0.10 | loss: 230.6017   | error: 57.000 - valid | validloss: 1531.5071  | validerror: 181.00 | s/iter: 0.2254	
+train | epoch = 10 | lr = 0.10 | loss: 205.9181   | error: 67.000 - valid | validloss: 1683.8639  | validerror: 192.00 | s/iter: 0.2185	
+| test | error: 194.0000
+
+
+	\end{Verbatim}
+	
+	\item[(b)]
+	
+	\begin{Verbatim}[fontsize=\small]
+	[ Some repeated 0's omitted to fit page ]
+		
+train | epoch = 1  | lr = 0.10 | loss: 51.6955    | error: 42.00 - valid | validloss: 20528.6838 | validerror: 7349.00 | s/iter: 1.0672	
+train | epoch = 2  | lr = 0.10 | loss: 17036.5289 | error: 30.00 - valid | validloss: 31677.9093 | validerror: 7778.00 | s/iter: 1.0163	
+train | epoch = 3  | lr = 0.10 | loss: 28253.4735 | error: 31.00 - valid | validloss: 30825.3480 | validerror: 7606.00 | s/iter: 1.1350	
+train | epoch = 4  | lr = 0.10 | loss: 25271.3729 | error: 28.00 - valid | validloss: 25903.1999 | validerror: 6450.00 | s/iter: 1.0704	
+train | epoch = 5  | lr = 0.10 | loss: 17990.4247 | error: 20.00 - valid | validloss: 16927.2973 | validerror: 6751.00 | s/iter: 1.0645	
+train | epoch = 6  | lr = 0.10 | loss: 10830.9136 | error: 23.00 - valid | validloss: 16616.2025 | validerror: 5651.00 | s/iter: 1.0418	
+train | epoch = 7  | lr = 0.10 | loss: 11949.9100 | error: 13.00 - valid | validloss: 12137.8374 | validerror: 5181.00 | s/iter: 1.0266	
+train | epoch = 8  | lr = 0.10 | loss: 4517.3605  | error: 10.00 - valid | validloss: 6079.8848  | validerror: 4046.00 | s/iter: 1.0288	
+train | epoch = 9  | lr = 0.10 | loss: 487.6562   | error: 3.000 - valid | validloss: 4726.9952  | validerror: 3661.00 | s/iter: 1.0574	
+train | epoch = 10 | lr = 0.10 | loss: 0.0000     | error: 0.000 - valid | validloss: 4726.9952  | validerror: 3661.00 | s/iter: 1.1250	
+| test | error: 3764.0000
+	\end{Verbatim}	
+	\end{itemize}
+\end{landscape}
+
+The test error is an order of magnitude higher when the number of training examples is reduced to 50, and its training error drops to 0
+by the 10$^\text{th}$ epoch. The small amount of training data is preventing the model from generalizing well and is fitting the few examples
+too closely.
+
+\newpage
+\newgeometry{left=2cm, right=2cm, bottom=1in, top=2cm}	
+\thispagestyle{empty}
+\begin{landscape}
+
+\item[Problem 4]
+
+	\begin{itemize}
+	
+	\item[(a)]
+
+    \begin{Verbatim}[fontsize=\small]
+    [ Some repeated 0's omitted to fit page ]
+    
+Started training!	
+train | epoch = 1  | lr = 0.10 | loss: 4.3227  | error: 673.00 - valid | validloss: 8.3148  | validerror: 897.00 | s/iter: 1.4100	
+train | epoch = 2  | lr = 0.10 | loss: 9.4016  | error: 711.00 - valid | validloss: 12.5936 | validerror: 632.00 | s/iter: 0.8674	
+train | epoch = 3  | lr = 0.10 | loss: 11.0009 | error: 679.00 - valid | validloss: 8.4591  | validerror: 667.00 | s/iter: 0.6654	
+train | epoch = 4  | lr = 0.10 | loss: 8.9057  | error: 642.00 - valid | validloss: 10.4399 | validerror: 615.00 | s/iter: 0.5263	
+train | epoch = 5  | lr = 0.10 | loss: 9.7528  | error: 650.00 - valid | validloss: 8.4661  | validerror: 681.00 | s/iter: 0.5463	
+train | epoch = 6  | lr = 0.10 | loss: 7.7823  | error: 609.00 - valid | validloss: 10.1408 | validerror: 578.00 | s/iter: 0.4965	
+train | epoch = 7  | lr = 0.10 | loss: 7.9630  | error: 605.00 - valid | validloss: 9.9035  | validerror: 701.00 | s/iter: 0.4902	
+train | epoch = 8  | lr = 0.10 | loss: 8.7722  | error: 580.00 - valid | validloss: 12.1379 | validerror: 714.00 | s/iter: 0.5081	
+train | epoch = 9  | lr = 0.10 | loss: 7.8785  | error: 585.00 - valid | validloss: 15.0684 | validerror: 814.00 | s/iter: 0.6365	
+train | epoch = 10 | lr = 0.10 | loss: 9.0017  | error: 594.00 - valid | validloss: 8.8732  | validerror: 522.00 | s/iter: 0.7690	
+| test | error: 539.0000   
+    
+    \end{Verbatim}
+	
+	\item[(b)]
+	
+	\begin{Verbatim}[fontsize=\small]
+    [ Some repeated 0's omitted to fit page ]
+	
+Started training!	
+train | epoch = 1  | lr = 10.00 | loss: 2485.9835 | error: 891.00 - valid | validloss: 4055.8283 | validerror: 909.0000 | s/iter: 0.6918	
+train | epoch = 2  | lr = 10.00 | loss: 4086.3165 | error: 887.00 - valid | validloss: 4423.5081 | validerror: 894.0000 | s/iter: 0.6152	
+train | epoch = 3  | lr = 10.00 | loss: 3969.8513 | error: 874.00 - valid | validloss: 3123.8858 | validerror: 808.0000 | s/iter: 0.6641	
+train | epoch = 4  | lr = 10.00 | loss: 3757.5813 | error: 864.00 - valid | validloss: 3154.6254 | validerror: 893.0000 | s/iter: 0.6569	
+train | epoch = 5  | lr = 10.00 | loss: 3594.8924 | error: 851.00 - valid | validloss: 3549.8411 | validerror: 902.0000 | s/iter: 0.6334	
+train | epoch = 6  | lr = 10.00 | loss: 3348.6495 | error: 869.00 - valid | validloss: 3616.0253 | validerror: 796.0000 | s/iter: 0.6807	
+train | epoch = 7  | lr = 10.00 | loss: 3684.8834 | error: 867.00 - valid | validloss: 4914.1613 | validerror: 893.0000 | s/iter: 0.7134	
+train | epoch = 8  | lr = 10.00 | loss: 3974.6062 | error: 869.00 - valid | validloss: 3662.8346 | validerror: 850.0000 | s/iter: 0.6530	
+train | epoch = 9  | lr = 10.00 | loss: 3701.1161 | error: 861.00 - valid | validloss: 3326.8367 | validerror: 889.0000 | s/iter: 0.6512	
+train | epoch = 10 | lr = 10.00 | loss: 3007.4889 | error: 849.00 - valid | validloss: 3067.7316 | validerror: 834.0000 | s/iter: 0.6367	
+| test | error: 847.0000
+
+    \end{Verbatim}
+    
+The higher learning rate is preventing the model from converging because the steps it is taking during gradient descent are too large
+and hence it is bypassing the local minimum of the loss function.
+	
+	\end{itemize}
+	
+\end{landscape}
+	
+\newpage
+\newgeometry{left=2cm, right=2cm, bottom=1in, top=2cm}	
+\thispagestyle{empty}
+\begin{landscape}
+\item[Problem 5]
+
+	\begin{itemize}
+	
+	\item[(a)]
+	
+		\begin{Verbatim}[fontsize=\small]
+    [ Some repeated 0's omitted to fit page ]
+	
+Started training!	
+train | epoch = 1  | lr = 0.10 | loss: 2.2380 | error: 10314.0 - valid | validloss: 2.1761 | validerror: 2470.00 | s/iter: 41.6701	
+train | epoch = 2  | lr = 0.10 | loss: 2.0543 | error: 9139.00 - valid | validloss: 2.4200 | validerror: 2562.00 | s/iter: 49.2103	
+train | epoch = 3  | lr = 0.10 | loss: 1.9116 | error: 8442.00 - valid | validloss: 1.9177 | validerror: 2133.00 | s/iter: 46.2651	
+train | epoch = 4  | lr = 0.10 | loss: 1.8394 | error: 8147.00 - valid | validloss: 1.8561 | validerror: 2060.00 | s/iter: 44.2689	
+train | epoch = 5  | lr = 0.10 | loss: 1.7580 | error: 7711.00 - valid | validloss: 1.7085 | validerror: 1874.00 | s/iter: 44.2072	
+train | epoch = 6  | lr = 0.10 | loss: 1.7184 | error: 7520.00 - valid | validloss: 1.6728 | validerror: 1852.00 | s/iter: 45.3340	
+train | epoch = 7  | lr = 0.10 | loss: 1.6559 | error: 7231.00 - valid | validloss: 1.6206 | validerror: 1780.00 | s/iter: 44.4921	
+train | epoch = 8  | lr = 0.10 | loss: 1.6619 | error: 7309.00 - valid | validloss: 1.6352 | validerror: 1807.00 | s/iter: 43.3158	
+train | epoch = 9  | lr = 0.10 | loss: 1.5983 | error: 6940.00 - valid | validloss: 1.6965 | validerror: 1836.00 | s/iter: 44.0556	
+train | epoch = 10 | lr = 0.10 | loss: 1.6928 | error: 7396.00 - valid | validloss: 1.7936 | validerror: 1959.00 | s/iter: 44.7808	
+train | epoch = 11 | lr = 0.10 | loss: 1.6030 | error: 6969.00 - valid | validloss: 1.5918 | validerror: 1745.00 | s/iter: 46.5835	
+train | epoch = 12 | lr = 0.10 | loss: 1.5121 | error: 6662.00 - valid | validloss: 1.6397 | validerror: 1773.00 | s/iter: 46.6304	
+train | epoch = 13 | lr = 0.10 | loss: 1.4987 | error: 6534.00 - valid | validloss: 1.6749 | validerror: 1874.00 | s/iter: 44.3746	
+train | epoch = 14 | lr = 0.10 | loss: 1.4107 | error: 6138.00 - valid | validloss: 1.5345 | validerror: 1672.00 | s/iter: 44.2483	
+train | epoch = 15 | lr = 0.10 | loss: 1.4839 | error: 6410.00 - valid | validloss: 1.6585 | validerror: 1809.00 | s/iter: 45.4072	
+train | epoch = 16 | lr = 0.10 | loss: 1.3378 | error: 5748.00 - valid | validloss: 1.6736 | validerror: 1783.00 | s/iter: 46.6513	
+train | epoch = 17 | lr = 0.10 | loss: 1.3051 | error: 5631.00 - valid | validloss: 1.4756 | validerror: 1608.00 | s/iter: 45.0359	
+train | epoch = 18 | lr = 0.10 | loss: 1.3316 | error: 5742.00 - valid | validloss: 1.6513 | validerror: 1847.00 | s/iter: 50.6509	
+train | epoch = 19 | lr = 0.10 | loss: 1.2447 | error: 5383.00 - valid | validloss: 1.5378 | validerror: 1667.00 | s/iter: 52.5520	
+train | epoch = 20 | lr = 0.10 | loss: 1.3123 | error: 5651.00 - valid | validloss: 1.6094 | validerror: 1772.00 | s/iter: 48.0423	
+| test | error: 1768.0000
+
+    \end{Verbatim}
+	
+	\begin{center}
+	\includegraphics[width=0.3\linewidth]{assign2/torch/layer_1_weights20}
+	$$\text{ image of the first layer filters after 20 epochs of training}$$
+	\end{center}
+	
+	\item[(b)]
+	
+	\[
+	\begin{matrix*}[l]
+	\texttt{layer   } & \texttt{weights} & & \texttt{biases} & \\
+	\texttt{ 1 } & (16 \times 3 \times 5 \times 5) & + & 16 & = & 1216\\
+	\texttt{ 2 } & (128 \times 16 \times 5 \times 5) & + & 128 & = & 51,328\\
+	\texttt{ 3 } & (64 \times 3200) & + & 64 & = & 204,864\\
+	\texttt{ 4 } & (10 \times 64) & + & 10 & = & 650\\
+	\\
+	\texttt{Total   } & & & & = & 258,058	
+	\end{matrix*}
+	\]
+	
+	\end{itemize}
+	
+\end{landscape}
+
+\end{itemize}
+
+\end{document}
