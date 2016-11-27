@@ -4,6 +4,8 @@ __pycache__/
 *$py.class
 
 *.t7
+*.ppm
+*.zip
 
 *.aux
 *.gz
